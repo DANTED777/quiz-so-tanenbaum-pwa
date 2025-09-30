@@ -1,4 +1,4 @@
-const CACHE_NAME = 'quiz-so-v1';
+const CACHE_NAME = 'quiz-so-v1.0.0';
 const urlsToCache = [
   './quiz-app.html',
   './styles.css',
@@ -13,7 +13,7 @@ const urlsToCache = [
   './trophy-emoji.svg'
 ];
 
-// Instalar Service Worker
+// Instalación del Service Worker
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
@@ -24,7 +24,7 @@ self.addEventListener('install', event => {
   );
 });
 
-// Interceptar requests
+// Interceptar peticiones de red
 self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request)

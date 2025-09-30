@@ -1,22 +1,39 @@
 {
   "name": "Quiz Sistemas Operativos - Tanenbaum",
   "short_name": "Quiz SO",
-  "description": "Quiz interactivo de Sistemas Operativos basado en el libro de Tanenbaum",
+  "description": "Quiz interactivo sobre Sistemas Operativos basado en el libro de Tanenbaum",
   "start_url": "./quiz-app.html",
   "display": "standalone",
   "background_color": "#1a1a1a",
   "theme_color": "#00ff00",
   "orientation": "portrait-primary",
   "scope": "./",
+  "lang": "es",
   "icons": [
     {
       "src": "computer-emoji.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
+    },
+    {
+      "src": "computer-emoji.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "computer-emoji.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
     }
   ],
   "categories": ["education", "productivity"],
-  "lang": "es",
-  "dir": "ltr"
+  "screenshots": [
+    {
+      "src": "computer-emoji.svg",
+      "sizes": "1280x720",
+      "type": "image/svg+xml",
+      "form_factor": "wide"
+    }
+  ]
 }
