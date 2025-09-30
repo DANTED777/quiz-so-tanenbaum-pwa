@@ -6,21 +6,19 @@
     <title>Quiz Sistemas Operativos - Tanenbaum</title>
     
     <!-- PWA Meta Tags -->
-    <meta name="description" content="Quiz interactivo sobre Sistemas Operativos basado en el libro de Tanenbaum">
-    <meta name="theme-color" content="#16213e">
+    <meta name="description" content="Quiz interactivo de Sistemas Operativos basado en el libro de Tanenbaum">
+    <meta name="theme-color" content="#00ff00">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Quiz SO">
-    <meta name="msapplication-TileColor" content="#1a1a2e">
     
-    <!-- PWA Manifest -->
+    <!-- Manifest -->
     <link rel="manifest" href="manifest.json">
     
-    <!-- PWA Icons -->
-    <link rel="icon" type="image/svg+xml" href="computer-emoji.svg">
+    <!-- Favicon -->
+    <link rel="icon" href="computer-emoji.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="computer-emoji.svg">
     
-    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
@@ -122,5 +120,20 @@
 
     <script src="quiz-data.js"></script>
     <script src="quiz-script.js"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(registration => {
+                        console.log('SW registrado con éxito:', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW falló al registrarse:', registrationError);
+                    });
+            });
+        }
+    </script>
 </body>
 </html>

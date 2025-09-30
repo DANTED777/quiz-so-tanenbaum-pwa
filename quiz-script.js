@@ -440,12 +440,12 @@ function restartQuiz() {
 
 // Función para formatear texto con efectos de máquina de escribir (opcional)
 function typeWriter(element, text, speed = 50) {
-    element.textContent = '';
+    element.innerHTML = '';
     let i = 0;
     
     function type() {
         if (i < text.length) {
-            element.textContent += text.charAt(i);
+            element.innerHTML += text.charAt(i);
             i++;
             setTimeout(type, speed);
         }
@@ -453,45 +453,3 @@ function typeWriter(element, text, speed = 50) {
     
     type();
 }
-
-// Registro del Service Worker para PWA
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js')
-            .then((registration) => {
-                console.log('PWA: Service Worker registrado exitosamente:', registration.scope);
-                
-                // Verificar si hay una actualización disponible
-                registration.addEventListener('updatefound', () => {
-                    const newWorker = registration.installing;
-                    newWorker.addEventListener('statechange', () => {
-                        if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                            // Nueva versión disponible
-                            console.log('PWA: Nueva versión disponible');
-                            // Aquí podrías mostrar una notificación al usuario
-                        }
-                    });
-                });
-            })
-            .catch((error) => {
-                console.log('PWA: Error al registrar Service Worker:', error);
-            });
-    });
-}
-
-// Detectar si la app se puede instalar
-let deferredPrompt;
-window.addEventListener('beforeinstallprompt', (e) => {
-    console.log('PWA: App se puede instalar');
-    e.preventDefault();
-    deferredPrompt = e;
-    
-    // Aquí podrías mostrar un botón de instalación personalizado
-    // Por ahora, el navegador mostrará su propio prompt
-});
-
-// Detectar cuando la app se instala
-window.addEventListener('appinstalled', (evt) => {
-    console.log('PWA: App instalada exitosamente');
-    deferredPrompt = null;
-});
