@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Sistemas Operativos - Tanenbaum</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="description" content="Quiz interactivo sobre Sistemas Operativos basado en el libro de Tanenbaum">
+    <meta name="theme-color" content="#16213e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Quiz SO">
+    <meta name="msapplication-TileColor" content="#1a1a2e">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- PWA Icons -->
+    <link rel="icon" type="image/svg+xml" href="computer-emoji.svg">
+    <link rel="apple-touch-icon" href="computer-emoji.svg">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Pantalla de inicio -->
+    <main id="start-screen" class="screen active">
+        <header class="screen-header">
+            <h1 class="title"><img src="computer-emoji.svg" alt="Computer" class="pixel-emoji"> QUIZ SO <img src="computer-emoji.svg" alt="Computer" class="pixel-emoji"></h1>
+            <h2 class="subtitle">Sistemas Operativos - Tanenbaum</h2>
+        </header>
+        
+        <section class="terminal-display">
+            <div class="terminal-content">
+                <div class="terminal-line">$ ./quiz_so.exe</div>
+                <div class="terminal-line">Loading...</div>
+                <div class="terminal-line blinking">█</div>
+            </div>
+        </section>
+        
+        <section class="instructions">
+            <p>📚 Responde las preguntas teóricas</p>
+            <p><img src="target-emoji.svg" alt="Target" class="pixel-emoji"> Necesitas 60+ puntos para aprobar</p>
+                <p><img src="lightbulb-emoji.svg" alt="Lightbulb" class="pixel-emoji"> Verás justificaciones después de cada respuesta</p>
+        </section>
+        
+        <button id="start-btn" class="pixel-btn start-btn">INICIAR QUIZ</button>
+    </main>
+
+    <!-- Pantalla de pregunta -->
+    <main id="quiz-screen" class="screen">
+        <header class="quiz-header">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <div class="quiz-stats">
+                <span id="question-counter">Pregunta 1/19</span>
+            </div>
+        </header>
+        
+        <section class="question-section">
+            <h2 class="question-text" id="question-text"></h2>
+            
+            <div class="options-container" id="options-container">
+                <!-- Las opciones se generarán dinámicamente -->
+            </div>
+            
+            <button id="next-btn" class="pixel-btn next-btn" style="display: none;">SIGUIENTE</button>
+        </section>
+    </main>
+
+        <!-- Pantalla de explicación -->
+    <main id="explanation-screen" class="screen">
+        <section class="explanation-content" id="explanation-content">
+            <!-- El contenido se genera dinámicamente -->
+        </section>
+        <button id="continue-btn" class="pixel-btn continue-btn">CONTINUAR</button>
+    </main>
+    <!-- Pantalla de resultados -->
+    <main id="results-screen" class="screen">
+        <header class="screen-header">
+            <h1 class="title"><img src="trophy-emoji.svg" alt="Trophy" class="pixel-emoji"> RESULTADOS <img src="trophy-emoji.svg" alt="Trophy" class="pixel-emoji"></h1>
+        </header>
+        
+        <section class="results-section">
+            <div class="score-display">
+                <div class="final-score" id="final-score">0</div>
+                <div class="score-label">PUNTOS FINALES</div>
+            </div>
+            <div class="result-status" id="result-status"></div>
+        </section>
+        
+        <section class="results-actions">
+            <button id="review-btn" class="pixel-btn review-btn">REVISAR RESPUESTAS</button>
+            <button id="restart-btn" class="pixel-btn restart-btn">REINICIAR QUIZ</button>
+        </section>
+    </main>
+
+    <!-- Pantalla de revisión -->
+    <main id="review-screen" class="screen">
+        <header class="screen-header">
+            <h1 class="title">📋 REVISIÓN 📋</h1>
+            <button id="back-to-results-btn" class="pixel-btn back-btn">VOLVER A RESULTADOS</button>
+        </header>
+        
+        <section class="review-container" id="review-container">
+            <!-- El contenido se genera dinámicamente -->
+        </section>
+    </main>
+
+    <!-- Animación de carga entre pantallas -->
+    <div id="loading-animation" class="loading-animation">
+        <img src="gear-emoji.svg" alt="Loading" class="gear-animation">
+        <img src="gear-emoji.svg" alt="Loading" class="gear-animation">
+        <div class="pixel-loading-container">
+            <div class="pixel-loading-bar"></div>
+        </div>
+        <div class="loading-text">PROCESANDO...</div>
+    </div>
+
+    <script src="quiz-data.js"></script>
+    <script src="quiz-script.js"></script>
+</body>
+</html>

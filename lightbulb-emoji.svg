@@ -1,0 +1,32 @@
+<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <!-- Lightbulb emoji pixel art style -->
+  <rect x="0" y="0" width="24" height="24" fill="transparent"/>
+  
+  <!-- Bulb outline -->
+  <rect x="8" y="4" width="8" height="2" fill="#ffff00"/>
+  <rect x="6" y="6" width="12" height="2" fill="#ffff00"/>
+  <rect x="6" y="8" width="12" height="2" fill="#ffff00"/>
+  <rect x="6" y="10" width="12" height="2" fill="#ffff00"/>
+  <rect x="8" y="12" width="8" height="2" fill="#ffff00"/>
+  
+  <!-- Base/screw -->
+  <rect x="9" y="14" width="6" height="2" fill="#cccccc"/>
+  <rect x="9" y="16" width="6" height="2" fill="#cccccc"/>
+  <rect x="10" y="18" width="4" height="2" fill="#cccccc"/>
+  
+  <!-- Highlight on bulb -->
+  <rect x="8" y="6" width="2" height="2" fill="#ffffff"/>
+  <rect x="8" y="8" width="2" height="2" fill="#ffffff"/>
+  
+  <!-- Glow effect -->
+  <rect x="4" y="6" width="2" height="2" fill="#ffff88"/>
+  <rect x="18" y="6" width="2" height="2" fill="#ffff88"/>
+  <rect x="6" y="4" width="2" height="2" fill="#ffff88"/>
+  <rect x="16" y="4" width="2" height="2" fill="#ffff88"/>
+  
+  <!-- Sparkle effects -->
+  <rect x="2" y="8" width="2" height="2" fill="#ffffff"/>
+  <rect x="20" y="8" width="2" height="2" fill="#ffffff"/>
+  <rect x="4" y="2" width="2" height="2" fill="#ffffff"/>
+  <rect x="18" y="2" width="2" height="2" fill="#ffffff"/>
+</svg>
